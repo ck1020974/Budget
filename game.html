@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>全民有感？你來決定！</title>
+        <link rel="stylesheet" href="style.css" />
+      </head>
+      <body>
+        <!-- 背景圖片層（完整顯示） -->
+        <div class="bg-image"></div>
+        <!-- 上方導覽列 -->
+        <header class="top-bar">
+          <div class="top-bar-title">📊 全民有感？你來決定！</div>
+          <div class="top-bar-buttons">
+            <button onclick="window.location.href='index.html'">首頁</button>
+            <button onclick="window.location.href='policy.html'">政策</button>
+            <button onclick="window.location.href='about.html'">關於</button>
+          </div>
+        </header>
+
+  <main class="main-content">
+    <section class="content-section">
+      <div class="header-container">
+        <h1>決定政策</h1>
+        <div class="budget">剩餘預算：1000億</div>
+      </div>
+      <div id="timer-bar-container">
+        <div id="timer-bar"></div>
+      </div>
+      <div id="round-container" class="policy-list"></div>
+    </section>
+  </main>
+
+  <script src="game.js"></script> <!-- 建議另寫一個專用 JS 檔 -->
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>政策說明 - 全民有感？你來決定！</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <!-- 背景圖層 -->
+  <div class="bg-image"></div>
+
+  <!-- 上方導覽列 -->
+  <header class="top-bar">
+    <div class="top-bar-title">📊 全民有感？你來決定！</div>
+    <div class="top-bar-buttons">
+      <button onclick="window.location.href='index.html'">首頁</button>
+      <button onclick="window.location.href='policy.html'">政策</button>
+      <button onclick="window.location.href='about.html'">關於</button>
+    </div>
+  </header>
+
+  <!-- 政策內容列表 -->
+  <main class="main-content">
+    <section class="content-section">
+      <h1>政策介紹</h1>
+      <div class="policy-list" id="policy-list"></div>
+    </section>
+  </main>
+
+  <!-- 載入政策資料 -->
+  <script>
+    function getCategoryIcon(category) {
+  const icons = {
+    '社會保險': '🛡️',
+    '社會津貼': '💵',
+    '社會救助': '🚨',
+    '福利服務': '👨‍👩‍👧',
+    '醫療保健': '🩺',
+    '社會住宅': '🏠',
+    '國民就業': '💼'
+  };
+  return icons[category] || '📁';
+}
+    fetch('policy-list.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('policy-list');
+        data.forEach(policy => {
+          const card = document.createElement('div');
+          card.className = 'policy-card';
+          card.innerHTML = `
+<div class="policy-image">${policy['政策名稱']}</div>
+<div class="policy-img-wrapper">
+  <img class="policy-img" src="${policy['圖片']}" alt="${policy['政策名稱']}圖片" />
+</div>
+<div class="policy-body">
+  <div class="policy-desc">${policy['政策內容']}</div>
+  <div class="policy-info">
+      <div>💰 預算：${policy['預算（億元）']} 億元</div>
+      <div>🗳️ 支持度：<span class="vote-icon">${'🗳️'.repeat(Math.round(policy['支持度'] / 3))}</span></div>
+    </div>
+  </div>
+`;
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error('無法載入政策資料', error);
+      });
+  </script>
+</body>
+</html>
