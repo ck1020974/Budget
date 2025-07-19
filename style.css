@@ -1,0 +1,587 @@
+/* 基本樣式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  min-height: 100vh;
+  position: relative;
+  color: #333;
+}
+
+/* 背景圖片樣式 */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* 上方導覽列樣式 */
+.top-bar {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.top-bar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.top-bar-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.top-bar-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.top-bar-buttons button:hover {
+  background-color: #e9ecef;
+}
+
+/* 主內容區域樣式 */
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 80px);
+}
+
+.welcome-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sub-title {
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.description {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.description p {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content:center;;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.start-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.start-btn.primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.start-btn.secondary {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn.primary:hover {
+  background-color: #2980b9;
+}
+
+.start-btn.secondary:hover {
+  background-color: #27ae60;
+}
+
+/* 政策頁面和關於頁面的通用樣式 */
+.content-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.content-section h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.round-display {
+  font-size: 1.8rem;
+  color: #3498db;
+  font-weight: 600;
+  background-color: rgba(52, 152, 219, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  border: 2px solid #3498db;
+  white-space: nowrap;
+}
+
+.budget {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 0;
+  color: #27ae60;
+}
+
+.budget {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.content-section p {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.policy-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.policy-card {
+  background: linear-gradient(to bottom, #ffffff, #f8fafd);  /* 柔和漸層背景 */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 微霧感陰影 */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e1e8ee; /* 精緻邊框 */
+}
+
+.policy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* 政策名稱區塊（保持原尺寸） */
+.policy-image {
+  background: linear-gradient(to right, #6ec6ff, #a29bfe);  /* 柔和藍紫 */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* 主體區塊（保持排版） */
+.policy-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 政策標題字型 */
+.policy-title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* 政策內容敘述 */
+.policy-desc {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  min-height: 20px;
+}
+
+/* 支持度、預算、類別（細節列） */
+.policy-info {
+  font-size: 0.9rem;
+  color: #374151;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-top: 1px dashed #dcdfe6;
+  padding-top: 0.6rem;
+}
+
+/* 預備用的標題欄（如需上下分段標題） */
+.policy-image-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 0.6rem;
+  border-bottom: 1px solid #ddd;
+  color: #2c3e50;
+}
+
+/* 圖片區塊保持 150px 高度 */
+.policy-img-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: #e9eef5;
+}
+
+.policy-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 投票 icon 色彩 */
+.vote-icon {
+  color: #e74c3c;
+}
+
+#timer-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+#timer-bar {
+  height: 100%;
+  width: 100%;
+  background-color: #3498db; /* 初始為柔和藍 */
+  transition: width 1s linear, background-color 0.5s ease;
+}
+
+#budget-display {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin: 1rem 0 2rem;
+  background-color: #fef9e7;
+  border: 2px dashed #f1c40f;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* 結局頁面樣式 */
+.ending-result {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.ending-result h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.ending-result p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.ending-result strong {
+  display: block;
+  font-size: 1.8rem;
+  color: #e74c3c;
+  margin: 1.5rem 0;
+  font-weight: 700;
+}
+
+.ending-result button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.ending-result button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  background: linear-gradient(135deg, #2980b9, #3498db);
+}
+
+/* 結局頁面按鈕群組 */
+.ending-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.ending-restart-btn {
+  background: linear-gradient(135deg, #2980b9, #3498db) !important;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+.ending-restart-btn:hover {
+  background: linear-gradient(135deg, #3498db, #2980b9) !important;
+}
+
+.ending-back-btn {
+  background: linear-gradient(135deg, #f39c12, #e67e22) !important;
+  color: white !important;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.25) !important;
+}
+.ending-back-btn:hover {
+  background: linear-gradient(135deg, #e67e22, #d35400) !important;
+}
+
+.ending-review-btn {
+  background: linear-gradient(135deg, #2ecc71, #27ae60) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3) !important;
+}
+.ending-review-btn:hover {
+  background: linear-gradient(135deg, #11998e, #38ef7d) !important;
+}
+
+/* 響應式 */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+  .sub-title {
+    font-size: 1.5rem;
+  }
+  .description p {
+    font-size: 1.1rem;
+  }
+  .button-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .start-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  .content-section {
+    padding: 2rem 1rem;
+  }
+  .header-container h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+  .round-display {
+    font-size: 2rem;
+    padding: 0.2rem 0.6rem;
+  }
+  .content-section p {
+    font-size: 1.1rem;
+  }
+}
+
+.main-ending-title {
+  font-size: 2.8rem;
+  color: #c0392b;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.sub-ending-title {
+  font-size: 1.3rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.skip-btn-container {
+  display: flex;
+  justify-content:flex-end;  /* 改為靠右 */
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-right: 1rem; /* 控制距離右邊的距離，可調整 */
+}
+
+.skip-round-btn {
+  background: linear-gradient(135deg, #f39c12, #e67e22); /* 橘色漸層 */
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem; /* 整體變小 */
+  font-size: 1.2rem;
+  border-radius: 12px; /* 改成方框圓角 */
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(243, 156, 18, 0.25);
+  font-weight: 600;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.skip-round-btn:hover {
+  background: linear-gradient(135deg, #e67e22, #d35400); /* hover 深橘漸層 */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.skip-round-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.skip-round-btn:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.skip-round-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, #f6f8fa 80%, #e9eef3 100%);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(52, 73, 94, 0.10);
+}
+
+.feedback-card {
+  background: #fff;
+  border-left: 6px solid #6bb9f0;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.07);
+  padding: 1.5rem 2rem;
+  border-radius: 14px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  font-weight: 500;
+  color: #222;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.feedback-card::before {
+  content: "📌";
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
